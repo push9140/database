@@ -1,0 +1,26 @@
+select * from  address
+select * from orders
+select customer.first_name,customer.last_name,customer.mob_no,orders.order_date,
+orders.order_total,orders.order_item,orders.address from orders left join customer
+ on customer.email_id=orders.cust_id
+ left join address on order.address=address.add_id
+ select * from address
+ select orders.order_number,orders.cust_id,orders.order_date,orders.order_total,
+ orders.order_item,orders.address,address.full_add,address.Landmark,address.add_type,
+ address.pincode from orders left join address on orders.address=address.add_id
+
+
+
+ use techpile_db
+ select * from orders
+ select max(order_total) from orders
+ --maximum salary
+ select * from orders where order_total=
+ ( select max(order_total) from orders)
+ --2 highest salary
+ select * from orders order by order_total desc
+
+ select top 2 *from orders order by order_total desc
+ -- 2 higest
+ select max(order_total) from orders where order_total<>
+ (select max(order_total) from orders)
